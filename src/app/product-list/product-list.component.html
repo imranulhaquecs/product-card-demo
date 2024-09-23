@@ -1,0 +1,24 @@
+<div class="container mt-4">
+    <!-- Search bar -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Search products..." (input)="onSearchChange($event)">
+      </div>
+      <div class="col-md-4">
+        <select class="form-select" (change)="onCategoryChange($event)">
+          <option value="All Products">All Products</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Accessories">Accessories</option>
+        </select>
+      </div>
+    </div>
+  
+    <!-- Product cards -->
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let product of filteredProducts">
+        <app-product-card [product]="product"></app-product-card>
+      </div>
+    </div>
+  </div>
+  
